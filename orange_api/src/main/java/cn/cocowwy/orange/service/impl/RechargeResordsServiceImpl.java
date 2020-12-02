@@ -1,0 +1,26 @@
+package cn.cocowwy.orange.service.impl;
+
+import cn.cocowwy.orange.entity.RechargeResords;
+import cn.cocowwy.orange.mapper.RechargeResordsMapper;
+import cn.cocowwy.orange.service.RechargeResordsService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ * 橙币充值记录表(RechargeResords)表服务实现类
+ *
+ * @author Cocowwy
+ * @since 2020-12-02 14:03:54
+ */
+@Service
+public class RechargeResordsServiceImpl extends ServiceImpl<RechargeResordsMapper, RechargeResords> implements RechargeResordsService {
+    @Autowired
+    private RechargeResordsMapper rechargeResordsMapper;
+
+    @Override
+    public boolean save(RechargeResords dto) {
+        return super.save(dto);
+    }
+
+}

@@ -1,0 +1,16 @@
+package cn.cocowwy.orange.mapper;
+
+import cn.cocowwy.orange.entity.User;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * 用户基本信息表 (User)表数据库访问层
+ *
+ * @author Cocowwy
+ * @since 2020-12-02 13:34:32
+ */
+@Mapper
+public interface UserMapper extends BaseMapper<User> {
+
+}
