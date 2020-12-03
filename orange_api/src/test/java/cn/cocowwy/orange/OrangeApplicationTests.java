@@ -3,6 +3,7 @@ package cn.cocowwy.orange;
 
 import cn.cocowwy.orange.api.svc.ILoginOpenService;
 import cn.cocowwy.orange.service.UserService;
+import cn.cocowwy.orange.utils.RandomStrategy;
 import cn.cocowwy.orange.utils.RedisUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -40,13 +41,7 @@ class OrangeApplicationTests {
      */
     @Test
     void userIdRandomStrategy() {
-//        Timestamp time = Timestamp.from(Instant.now());
-//        LocalDateTime localDateTime = time.toLocalDateTime();
-        String username = "cocowwy";
-        Timestamp time = Timestamp.valueOf(LocalDateTime.now());
-        System.out.println(time.getTime());
-        String temp = String.valueOf(time.getTime()) + Long.valueOf(username.hashCode());
-        System.out.println(temp.substring(0, 16));
+        RandomStrategy.getRandomUserId();
 
     }
 
