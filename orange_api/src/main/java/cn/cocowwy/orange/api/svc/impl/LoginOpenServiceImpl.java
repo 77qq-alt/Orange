@@ -5,6 +5,7 @@ import cn.cocowwy.orange.api.svc.ILoginOpenService;
 import cn.cocowwy.orange.entity.User;
 import cn.cocowwy.orange.service.UserService;
 import cn.cocowwy.orange.utils.AuthCheckUtil;
+import cn.cocowwy.orange.utils.RandomStrategy;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -66,7 +67,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
                     .build();
         }
 
-        //校验其余信息  wx不能二次绑定
+        // 校验其余信息  wx不能二次绑定
         List<User> userByWx = userService.querUserByWx(user.getWxId());
         if (userByWx.size() != 0) {
             return LoginOpenServiceDTO.UserRegistered
@@ -76,9 +77,13 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
                     .build();
         }
 
+        // 根据自动生成策略自动生成userid
+        Long randomUserId = RandomStrategy.getRandomUserId(user.getUsername());
+        user.setUserId(randomUserId);
+
         boolean save = userService.save(user);
 
-        //记录注册失败日志
+        // 记录注册失败日志
         if (save == false) {
             log.info("用户注册信息失败，用户注册提供信息为：" + user);
         }
