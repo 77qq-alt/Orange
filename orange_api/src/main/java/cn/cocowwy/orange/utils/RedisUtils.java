@@ -4,7 +4,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * Redis客户端操作工具类
+ *
+ * 自定义Redis客户端操作工具类
  *@author Cocowwy
  *@create 2020-12-12-20:58
  */

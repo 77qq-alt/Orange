@@ -78,7 +78,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
         }
 
         // 根据自动生成策略自动生成16位userid
-        Long randomUserId = RandomStrategy.getRandomUserId(user.getUsername());
+        Long randomUserId = RandomStrategy.getRandomUserId();
         user.setUserId(randomUserId);
 
         boolean save = userService.save(user);
