@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
  *@author Cocowwy
  *@create 2020-12-12-20:58
  */
-@Component
 public final class RedisUtils {
     private static RedisTemplate jsonTemplate = new RedisTemplate();
 

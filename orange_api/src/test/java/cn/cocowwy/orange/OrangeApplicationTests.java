@@ -5,6 +5,7 @@ import cn.cocowwy.orange.api.svc.ILoginOpenService;
 import cn.cocowwy.orange.service.UserService;
 import cn.cocowwy.orange.utils.RandomStrategy;
 import cn.cocowwy.orange.utils.RedisUtils;
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

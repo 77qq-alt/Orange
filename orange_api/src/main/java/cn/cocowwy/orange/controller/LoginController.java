@@ -6,6 +6,7 @@ import cn.cocowwy.orange.entity.User;
 import cn.cocowwy.orange.utils.AuthCheckUtil;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.Assert;
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,7 @@ import java.util.Map;
 public class LoginController {
     @Autowired
     ILoginOpenService loginOpenService;
+
 
     /**
      * 登录
