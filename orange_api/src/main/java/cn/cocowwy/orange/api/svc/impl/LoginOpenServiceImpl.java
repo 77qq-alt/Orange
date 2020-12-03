@@ -5,7 +5,6 @@ import cn.cocowwy.orange.api.svc.ILoginOpenService;
 import cn.cocowwy.orange.entity.User;
 import cn.cocowwy.orange.service.UserService;
 import cn.cocowwy.orange.utils.AuthCheckUtil;
-import cn.hutool.core.lang.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,7 +50,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
      * @return
      */
     @Override
-    public LoginOpenServiceDTO.CanBeRegisteredRespDTO UserRegistered(User user) {
+    public LoginOpenServiceDTO.UserRegistered UserRegistered(User user) {
         // 校验必填字段
         AuthCheckUtil.checkRegistered(user);
 
@@ -59,7 +58,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
 
         // 校验是否被注册
         if (users.size() != 0) {
-            return LoginOpenServiceDTO.CanBeRegisteredRespDTO
+            return LoginOpenServiceDTO.UserRegistered
                     .builder()
                     .result(false)
                     .message("该账号已被注册！")
@@ -69,7 +68,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
         //校验其余信息  wx不能二次绑定
         List<User> userByWx = userService.querUserByWx(user.getWxId());
         if (userByWx.size() != 0) {
-            return LoginOpenServiceDTO.CanBeRegisteredRespDTO
+            return LoginOpenServiceDTO.UserRegistered
                     .builder()
                     .result(false)
                     .message("该微信号已其他账号绑定！")
@@ -83,7 +82,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
             log.info("用户注册信息失败，用户注册提供信息为" + user);
         }
 
-        return LoginOpenServiceDTO.CanBeRegisteredRespDTO
+        return LoginOpenServiceDTO.UserRegistered
                 .builder()
                 .result(save)
                 .message(save == true ? "用户注册成功" : "用户注册失败，请联系管管理员！")

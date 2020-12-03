@@ -42,12 +42,7 @@ public class LoginController {
      */
     @PostMapping("/registered")
     public Map<String, Object> registered(@RequestParam("user") User user) {
-
-
-
-        // 注册
-
-
-        return null;
+        LoginOpenServiceDTO.UserRegistered canBeRegisteredRespDTO = loginOpenService.UserRegistered(user);
+        return BeanUtil.beanToMap(canBeRegisteredRespDTO);
     }
 }

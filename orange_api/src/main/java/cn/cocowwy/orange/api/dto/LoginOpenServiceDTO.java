@@ -36,7 +36,7 @@ public class LoginOpenServiceDTO {
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class CanBeRegisteredRespDTO{
+    public static class UserRegistered{
         // 是否可注册
         private Boolean result;
 

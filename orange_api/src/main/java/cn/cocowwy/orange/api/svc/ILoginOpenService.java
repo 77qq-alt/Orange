@@ -23,6 +23,6 @@ public interface ILoginOpenService {
      * @param user
      * @return
      */
-    LoginOpenServiceDTO.CanBeRegisteredRespDTO UserRegistered(User user);
+    LoginOpenServiceDTO.UserRegistered UserRegistered(User user);
 
 }
