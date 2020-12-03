@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 
 
 /**
- * @author Cocowwy
- * @since 2020-12-03 14:37:10
+ * @author wangwy8@asiainfo.com
+ * @since 2020-12-03 16:51:39
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 @Builder
 @TableName(value = "t_user")
 public class User extends Model {
-    private static final long serialVersionUID = 747580435788381041L;
+    private static final long serialVersionUID = 562731082112627804L;
 
     /**
      * 用户唯一标识 id
@@ -33,13 +33,13 @@ public class User extends Model {
      * 账户
      */
     @TableField("username")
-    private Long username;
+    private String username;
 
     /**
      * 密码
      */
     @TableField("password")
-    private Long password;
+    private String password;
 
     /**
      * 用户对外展示昵称
@@ -154,5 +154,11 @@ public class User extends Model {
      */
     @TableField("rsrv_str3")
     private String rsrvStr3;
+
+    /**
+     * 用户qq
+     */
+    @TableField("user_qq")
+    private String userQq;
 
 }
