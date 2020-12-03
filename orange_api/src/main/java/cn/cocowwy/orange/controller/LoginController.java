@@ -41,11 +41,12 @@ public class LoginController {
      * 注册
      */
     @PostMapping("/registered")
-    public String registered(@RequestParam("user") User user) {
-        // 校验必填字段
-        AuthCheckUtil.checkRegistered(user);
+    public Map<String, Object> registered(@RequestParam("user") User user) {
 
-        // 是否注册
+
+
+        // 注册
+
 
         return null;
     }

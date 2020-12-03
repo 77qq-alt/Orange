@@ -4,7 +4,7 @@ import cn.cocowwy.orange.api.dto.LoginOpenServiceDTO;
 import cn.cocowwy.orange.entity.User;
 
 /**
- * 提供登录相关的开放接口
+ * 提供登录注册相关的开放接口
  *@author Cocowwy
  *@create 2020-12-12-13:37
  */
@@ -23,5 +23,6 @@ public interface ILoginOpenService {
      * @param user
      * @return
      */
-    LoginOpenServiceDTO.CanBeRegisteredRespDTO CanBeRegistered(User user);
+    LoginOpenServiceDTO.CanBeRegisteredRespDTO UserRegistered(User user);
+
 }
