@@ -2,7 +2,6 @@ package cn.cocowwy.orange.utils;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Random;
 
 /**
  * 随机生成工具类
