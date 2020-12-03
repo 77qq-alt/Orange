@@ -10,7 +10,7 @@ import cn.hutool.core.lang.Assert;
  */
 public class AuthCheckUtil {
     /**
-     * 注册业务必填字段校验
+     * 注册业务必填字段非空校验
      * @param user
      */
     public static void checkRegistered(User user) {
@@ -27,7 +27,7 @@ public class AuthCheckUtil {
     }
 
     /**
-     * 校验用户名密码
+     * 登录校验用户名密码非空校验
      * @param username
      * @param password
      */
