@@ -4,6 +4,8 @@ import cn.cocowwy.orange.entity.User;
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.*;
 
+import java.io.Serializable;
+
 /**
  *@author Cocowwy
  *@create 2020-12-12-13:42
@@ -22,7 +24,7 @@ public class LoginOpenServiceDTO {
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class UserLoginMesageRespDTO{
+    public static class UserLoginMesageRespDTO implements Serializable {
         private Boolean result;
         private User user;
     }
@@ -36,7 +38,7 @@ public class LoginOpenServiceDTO {
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class UserRegistered{
+    public static class UserRegistered implements Serializable{
         // 是否可注册
         private Boolean result;
 
