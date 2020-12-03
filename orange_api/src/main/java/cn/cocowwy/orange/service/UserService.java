@@ -15,4 +15,8 @@ import java.util.List;
  */
 public interface UserService extends IService<User> {
     List<User> queryUser(String username, String password);
+
+    List<User> queryUserName(String username);
+
+    List<User> querUserByWx(String wx);
 }

@@ -34,4 +34,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         );
     }
 
+    @Override
+    public List<User> queryUserName(String username) {
+        return this.list(Wrappers.<User>lambdaQuery()
+                .eq(User::getUsername, username)
+        );
+    }
+
+    @Override
+    public List<User> querUserByWx(String wx) {
+        return this.list(Wrappers.<User>lambdaQuery()
+                .eq(User::getWxId, wx)
+        );
+    }
+
 }
