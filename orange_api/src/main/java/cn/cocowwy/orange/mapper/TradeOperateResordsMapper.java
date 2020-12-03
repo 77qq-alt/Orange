@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 订单操作记录表(TradeOperateResords)表数据库访问层
  *
  * @author Cocowwy
- * @since 2020-12-02 14:04:32
+ * @since 2020-12-03 14:27:47
  */
 @Mapper
 public interface TradeOperateResordsMapper extends BaseMapper<TradeOperateResords> {

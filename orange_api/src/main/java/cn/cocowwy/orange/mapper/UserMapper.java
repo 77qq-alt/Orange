@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 用户基本信息表 (User)表数据库访问层
  *
  * @author Cocowwy
- * @since 2020-12-02 13:34:32
+ * @since 2020-12-03 14:28:20
  */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {

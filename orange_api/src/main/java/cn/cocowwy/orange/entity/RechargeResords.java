@@ -8,12 +8,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.io.InputStream;
+import java.time.LocalDateTime;
 
 
 /**
  * @author Cocowwy
- * @since 2020-12-02 14:03:54
+ * @since 2020-12-03 14:37:59
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -21,7 +21,7 @@ import java.io.InputStream;
 @Builder
 @TableName(value = "t_recharge_resords")
 public class RechargeResords extends Model {
-    private static final long serialVersionUID = 517558920212184467L;
+    private static final long serialVersionUID = 243416032283228728L;
 
     /**
      * 充值流水号
@@ -45,7 +45,7 @@ public class RechargeResords extends Model {
      * 充值时间
      */
     @TableField("recharge_time")
-    private InputStream rechargeTime;
+    private LocalDateTime rechargeTime;
 
     /**
      * 预留字段1

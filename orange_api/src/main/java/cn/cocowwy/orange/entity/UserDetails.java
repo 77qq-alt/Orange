@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
 
 /**
  * @author Cocowwy
- * @since 2020-12-02 14:16:07
+ * @since 2020-12-03 14:37:41
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -19,7 +19,7 @@ import lombok.experimental.Accessors;
 @Builder
 @TableName(value = "t_user_details")
 public class UserDetails extends Model {
-    private static final long serialVersionUID = 894656215671403687L;
+    private static final long serialVersionUID = -84760163147174999L;
 
     /**
      * 用户唯一标识 id

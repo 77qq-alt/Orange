@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 /**
  * 订单操作记录表(TradeOperateResords)表服务实现类
  *
- * @author Cocowwy
- * @since 2020-12-02 14:04:31
+ * @author wangwy8@asiainfo.com
+ * @since 2020-12-03 14:27:47
  */
 @Service
 public class TradeOperateResordsServiceImpl extends ServiceImpl<TradeOperateResordsMapper, TradeOperateResords> implements TradeOperateResordsService {

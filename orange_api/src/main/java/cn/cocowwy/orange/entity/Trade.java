@@ -8,12 +8,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.io.InputStream;
+import java.time.LocalDateTime;
 
 
 /**
  * @author Cocowwy
- * @since 2020-12-02 14:04:20
+ * @since 2020-12-03 14:37:51
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -21,7 +21,7 @@ import java.io.InputStream;
 @Builder
 @TableName(value = "t_trade")
 public class Trade extends Model {
-    private static final long serialVersionUID = 423579904802080683L;
+    private static final long serialVersionUID = 220312159827965859L;
 
     /**
      * 订单唯一标识id
@@ -33,7 +33,7 @@ public class Trade extends Model {
      * 订单创建时间
      */
     @TableField("create_time")
-    private InputStream createTime;
+    private LocalDateTime createTime;
 
     /**
      * 订单创建用户userId
@@ -51,7 +51,7 @@ public class Trade extends Model {
      * 订单状态变更时间
      */
     @TableField("change_time")
-    private InputStream changeTime;
+    private LocalDateTime changeTime;
 
     /**
      * 接单用户userId
@@ -63,7 +63,7 @@ public class Trade extends Model {
      * 接单用户时间
      */
     @TableField("accept_time")
-    private InputStream acceptTime;
+    private LocalDateTime acceptTime;
 
     /**
      * 订单标题
@@ -99,13 +99,13 @@ public class Trade extends Model {
      * 订单期待完成时间
      */
     @TableField("expect_time")
-    private InputStream expectTime;
+    private LocalDateTime expectTime;
 
     /**
      * 订单预存活到期时间
      */
     @TableField("alive_time")
-    private InputStream aliveTime;
+    private LocalDateTime aliveTime;
 
     /**
      * 订单备注消息

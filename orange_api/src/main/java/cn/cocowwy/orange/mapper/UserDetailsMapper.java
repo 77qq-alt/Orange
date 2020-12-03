@@ -7,8 +7,8 @@ import org.apache.ibatis.annotations.Mapper;
 /**
  * 用户详细信息表(UserDetails)表数据库访问层
  *
- * @author wangwy8@asiainfo.com
- * @since 2020-12-02 14:16:07
+ * @author Cocowwy
+ * @since 2020-12-03 14:27:54
  */
 @Mapper
 public interface UserDetailsMapper extends BaseMapper<UserDetails> {

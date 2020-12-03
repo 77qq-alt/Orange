@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 /**
  * 橙愿墙信息表(OrangeWall)表服务实现类
  *
- * @authorCocowwy
- * @since 2020-12-02 14:03:28
+ * @author wangwy8@asiainfo.com
+ * @since 2020-12-03 14:27:21
  */
 @Service
 public class OrangeWallServiceImpl extends ServiceImpl<OrangeWallMapper, OrangeWall> implements OrangeWallService {

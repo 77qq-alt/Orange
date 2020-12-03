@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 /**
  * 橙币充值记录表(RechargeResords)表服务实现类
  *
- * @author Cocowwy
- * @since 2020-12-02 14:03:54
+ * @author wangwy8@asiainfo.com
+ * @since 2020-12-03 14:27:29
  */
 @Service
 public class RechargeResordsServiceImpl extends ServiceImpl<RechargeResordsMapper, RechargeResords> implements RechargeResordsService {

@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 /**
  * 举报记录表(ReportResords)表服务实现类
  *
- * @author Cocowwy
- * @since 2020-12-02 14:04:07
+ * @author wangwy8@asiainfo.com
+ * @since 2020-12-03 14:27:34
  */
 @Service
 public class ReportResordsServiceImpl extends ServiceImpl<ReportResordsMapper, ReportResords> implements ReportResordsService {

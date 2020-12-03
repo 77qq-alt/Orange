@@ -7,13 +7,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-import lombok.experimental.SuperBuilder;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+
 
 /**
  * @author Cocowwy
- * @since 2020-12-02 13:34:29
+ * @since 2020-12-03 14:37:10
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -21,7 +21,7 @@ import java.util.Date;
 @Builder
 @TableName(value = "t_user")
 public class User extends Model {
-    private static final long serialVersionUID = -59439505947821559L;
+    private static final long serialVersionUID = 747580435788381041L;
 
     /**
      * 用户唯一标识 id
@@ -30,22 +30,22 @@ public class User extends Model {
     private Long userId;
 
     /**
-     * 用户微信号
+     * 账户
      */
-    @TableField("wx_id")
-    private String wxId;
+    @TableField("username")
+    private Long username;
+
+    /**
+     * 密码
+     */
+    @TableField("password")
+    private Long password;
 
     /**
      * 用户对外展示昵称
      */
     @TableField("name")
     private String name;
-
-    /**
-     * 用户真实名称
-     */
-    @TableField("user_real_name")
-    private String userRealName;
 
     /**
      * 用户性别  0女 1男
@@ -87,31 +87,31 @@ public class User extends Model {
      * 用户注册时间
      */
     @TableField("registered_time")
-    private Date registeredTime;
+    private LocalDateTime registeredTime;
 
     /**
      * 用户销户时间
      */
     @TableField("cancellation_time")
-    private Date cancellationTime;
+    private LocalDateTime cancellationTime;
 
     /**
      * 用户封禁开始时间
      */
     @TableField("suspend_start_time")
-    private Date suspendStartTime;
+    private LocalDateTime suspendStartTime;
 
     /**
      * 用户封禁结束时间
      */
     @TableField("suspend_end_time")
-    private Date suspendEndTime;
+    private LocalDateTime suspendEndTime;
 
     /**
      * 用户最后一次登录时间
      */
     @TableField("last_login_time")
-    private Date lastLoginTime;
+    private LocalDateTime lastLoginTime;
 
     /**
      * 用户状态 0正常  1封禁  2注销
@@ -126,6 +126,24 @@ public class User extends Model {
     private Integer dayTradeTimes;
 
     /**
+     * 用户真实名称
+     */
+    @TableField("user_real_name")
+    private String userRealName;
+
+    /**
+     * 用户可联系微信号
+     */
+    @TableField("wx_id")
+    private String wxId;
+
+    /**
+     * 预留字段1
+     */
+    @TableField("rsrv_str1")
+    private String rsrvStr1;
+
+    /**
      * 预留字段2
      */
     @TableField("rsrv_str2")
@@ -136,11 +154,5 @@ public class User extends Model {
      */
     @TableField("rsrv_str3")
     private String rsrvStr3;
-
-    /**
-     * 预留字段1
-     */
-    @TableField("rsrv_str1")
-    private String rsrvStr1;
 
 }

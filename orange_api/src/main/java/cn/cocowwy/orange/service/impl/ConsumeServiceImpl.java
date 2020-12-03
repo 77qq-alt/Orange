@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 /**
  * 消费记录表(Consume)表服务实现类
  *
- * @author Cocowwy
- * @since 2020-12-02 14:01:42
+ * @author wangwy8@asiainfo.com
+ * @since 2020-12-03 14:27:15
  */
 @Service
 public class ConsumeServiceImpl extends ServiceImpl<ConsumeMapper, Consume> implements ConsumeService {

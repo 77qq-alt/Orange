@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 
 /**
  * @author Cocowwy
- * @since 2020-12-02 14:03:27
+ * @since 2020-12-03 14:38:03
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
 @Builder
 @TableName(value = "t_orange_wall")
 public class OrangeWall extends Model {
-    private static final long serialVersionUID = 449463555982982602L;
+    private static final long serialVersionUID = 692784333772271610L;
 
     /**
      * 上墙唯一标识id
@@ -40,13 +40,13 @@ public class OrangeWall extends Model {
      * 开始时间
      */
     @TableField("start_time")
-    private InputStream startTime;
+    private LocalDateTime startTime;
 
     /**
      * 到期时间
      */
     @TableField("end_time")
-    private InputStream endTime;
+    private LocalDateTime endTime;
 
     /**
      * 状态 0正常 1到期  2举报 3封禁
@@ -71,7 +71,7 @@ public class OrangeWall extends Model {
      * 图片
      */
     @TableField("image")
-    private LocalDateTime image;
+    private InputStream image;
 
     /**
      * 内容

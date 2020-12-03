@@ -11,7 +11,7 @@ import lombok.experimental.Accessors;
 
 /**
  * @author Cocowwy
- * @since 2020-12-02 14:01:42
+ * @since 2020-12-03 14:38:07
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -19,7 +19,7 @@ import lombok.experimental.Accessors;
 @Builder
 @TableName(value = "t_consume")
 public class Consume extends Model {
-    private static final long serialVersionUID = -62785502619172003L;
+    private static final long serialVersionUID = 737919570327167324L;
 
     /**
      * 用户唯一标识 id

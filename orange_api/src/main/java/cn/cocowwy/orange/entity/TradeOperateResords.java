@@ -8,12 +8,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.io.InputStream;
+import java.time.LocalDateTime;
 
 
 /**
  * @author Cocowwy
- * @since 2020-12-02 14:04:31
+ * @since 2020-12-03 14:37:46
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -21,7 +21,7 @@ import java.io.InputStream;
 @Builder
 @TableName(value = "t_trade_operate_resords")
 public class TradeOperateResords extends Model {
-    private static final long serialVersionUID = 666372373757828987L;
+    private static final long serialVersionUID = -42671832348503117L;
 
     /**
      * 订单唯一标识id
@@ -39,7 +39,7 @@ public class TradeOperateResords extends Model {
      * 操作时间
      */
     @TableField("operate_time")
-    private InputStream operateTime;
+    private LocalDateTime operateTime;
 
     /**
      * 操作标记 0接单 1派单 2完成订单 3取消已派单 4举报订单 5取消已接单 6封禁

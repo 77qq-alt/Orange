@@ -1,5 +1,5 @@
 server:
-  port: 18888
+  port: 8888
 spring:
   #\u6570\u636E\u6E90\u914D\u7F6E
   datasource:

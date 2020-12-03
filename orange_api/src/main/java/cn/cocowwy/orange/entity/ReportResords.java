@@ -8,12 +8,12 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
-import java.io.InputStream;
+import java.time.LocalDateTime;
 
 
 /**
  * @author Cocowwy
- * @since 2020-12-02 14:04:06
+ * @since 2020-12-03 14:37:55
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -21,7 +21,7 @@ import java.io.InputStream;
 @Builder
 @TableName(value = "t_report_resords")
 public class ReportResords extends Model {
-    private static final long serialVersionUID = 694988292928236607L;
+    private static final long serialVersionUID = -46549854721935869L;
 
     /**
      * 举报者的用户id
@@ -57,7 +57,7 @@ public class ReportResords extends Model {
      * 举报时间
      */
     @TableField("time")
-    private InputStream time;
+    private LocalDateTime time;
 
     /**
      * 0 未处理  1 已处理

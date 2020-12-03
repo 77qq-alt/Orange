@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * 用户详细信息表(UserDetails)表服务实现类
  *
  * @author wangwy8@asiainfo.com
- * @since 2020-12-02 14:16:07
+ * @since 2020-12-03 14:27:54
  */
 @Service
 public class UserDetailsServiceImpl extends ServiceImpl<UserDetailsMapper, UserDetails> implements UserDetailsService {
