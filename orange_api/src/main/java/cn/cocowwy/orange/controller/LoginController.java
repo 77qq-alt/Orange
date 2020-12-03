@@ -31,8 +31,6 @@ public class LoginController {
      */
     @PostMapping("/Login")
     public Map<String, Object> Login(@RequestParam("username") String username, @RequestParam("password") String password) {
-        Assert.notBlank(username);
-        Assert.notBlank(password);
         LoginOpenServiceDTO.UserLoginMesageRespDTO userLoginMesageRespDTO = loginOpenService.UserLoginMesage(username, password);
         return BeanUtil.beanToMap(userLoginMesageRespDTO);
     }

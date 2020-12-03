@@ -30,6 +30,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
      */
     @Override
     public LoginOpenServiceDTO.UserLoginMesageRespDTO UserLoginMesage(String username, String password) {
+        AuthCheckUtil.checkLogin(username, password);
         List<User> users = userService.queryUser(username, password);
         if (users.size() > 0) {
             return LoginOpenServiceDTO.UserLoginMesageRespDTO
@@ -79,7 +80,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
 
         //记录注册失败日志
         if (save == false) {
-            log.info("用户注册信息失败，用户注册提供信息为" + user);
+            log.info("用户注册信息失败，用户注册提供信息为：" + user);
         }
 
         return LoginOpenServiceDTO.UserRegistered
