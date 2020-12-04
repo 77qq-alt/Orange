@@ -10,3 +10,6 @@ Nacos作配置中心服务发现，sentinel熔断降级，
 springboot+springMVC+mybaits-plus+easyCode生成原子服务层接口操作数据库
 统一提供对外的api接口
 自定义RedisUtil等......
+
+
+项目正在开发中，会持续进行更新...
