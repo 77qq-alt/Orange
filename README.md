@@ -13,3 +13,9 @@ springboot+springMVC+mybaits-plus+easyCode生成原子服务层接口操作数�
 
 
 项目正在开发中，会持续进行更新...
+
+
+
+记录一下搭建框架以及环境的时候的小坑：
+1.尽量使用springInitializr搭建项目 而且注意springboot的版本是否支持alibaba！ 很容易出现版本不兼容的问题！
+2.nacos-config的时候 错将配置文件弄成了discovery 服务发现的配置文件
