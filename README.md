@@ -17,5 +17,6 @@ springboot+springMVC+mybaits-plus+easyCode生成原子服务层接口操作数�
 
 
 记录一下搭建框架以及环境的时候的小坑：
-1.尽量使用springInitializr搭建项目 而且注意springboot的版本是否支持alibaba！ 很容易出现版本不兼容的问题！
+1.尽量使用spring Initializr搭建项目 而且注意springboot的版本是否支持alibaba！ 很容易出现版本不兼容的问题！
 2.nacos-config的时候 错将配置文件弄成了discovery 服务发现的配置文件
+3.nacos刷新配置不生效 --- 暂未解决  目前仅重启nacos生效 ，网上说原因是因为cglib代理了两次，也有说要用专门的配置类。暂时搁置！
