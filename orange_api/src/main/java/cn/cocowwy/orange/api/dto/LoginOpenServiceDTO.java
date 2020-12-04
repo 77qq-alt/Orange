@@ -38,7 +38,7 @@ public class LoginOpenServiceDTO {
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class UserRegistered implements Serializable{
+    public static class UserRegistered implements Serializable {
         // 是否可注册
         private Boolean result;
 

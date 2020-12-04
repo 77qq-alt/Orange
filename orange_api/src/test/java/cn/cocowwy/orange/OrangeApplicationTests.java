@@ -5,15 +5,12 @@ import cn.cocowwy.orange.api.svc.ILoginOpenService;
 import cn.cocowwy.orange.service.UserService;
 import cn.cocowwy.orange.utils.RandomStrategy;
 import cn.cocowwy.orange.utils.RedisUtils;
-import com.alibaba.nacos.api.config.annotation.NacosValue;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 @SpringBootTest
 @Slf4j
