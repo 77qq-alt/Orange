@@ -14,7 +14,7 @@ import java.io.Serializable;
 @Setter
 @ToString
 @Builder
-public class LoginOpenServiceDTO {
+public class ILoginOpenServiceDTO {
     /**
      * 用户登录接口出参
      */

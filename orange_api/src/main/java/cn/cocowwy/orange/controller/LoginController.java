@@ -1,6 +1,7 @@
 package cn.cocowwy.orange.controller;
 
-import cn.cocowwy.orange.api.dto.LoginOpenServiceDTO;
+import cn.cocowwy.orange.api.dto.ILoginOpenServiceDTO;
+import cn.cocowwy.orange.api.dto.ILoginOpenServiceDTO;
 import cn.cocowwy.orange.api.svc.ILoginOpenService;
 import cn.cocowwy.orange.entity.User;
 import cn.cocowwy.orange.utils.AuthCheckUtil;
@@ -8,8 +9,9 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
-import sun.security.util.Password;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Map;
 
@@ -32,7 +34,7 @@ public class LoginController {
      */
     @PostMapping("/Login")
     public Map<String, Object> Login(@RequestParam("username") String username, @RequestParam("password") String password) {
-        LoginOpenServiceDTO.UserLoginMesageRespDTO userLoginMesageRespDTO = loginOpenService.UserLoginMesage(username, password);
+        ILoginOpenServiceDTO.UserLoginMesageRespDTO userLoginMesageRespDTO = loginOpenService.UserLoginMesage(username, password);
         return BeanUtil.beanToMap(userLoginMesageRespDTO);
     }
 
@@ -41,7 +43,7 @@ public class LoginController {
      */
     @PostMapping("/registered")
     public Map<String, Object> registered(@RequestParam("user") User user) {
-        LoginOpenServiceDTO.UserRegistered canBeRegisteredRespDTO = loginOpenService.UserRegistered(user);
+        ILoginOpenServiceDTO.UserRegistered canBeRegisteredRespDTO = loginOpenService.UserRegistered(user);
         return BeanUtil.beanToMap(canBeRegisteredRespDTO);
     }
 }

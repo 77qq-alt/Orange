@@ -1,6 +1,6 @@
 package cn.cocowwy.orange.api.svc;
 
-import cn.cocowwy.orange.api.dto.LoginOpenServiceDTO;
+import cn.cocowwy.orange.api.dto.ILoginOpenServiceDTO;
 import cn.cocowwy.orange.entity.User;
 
 /**
@@ -15,7 +15,7 @@ public interface ILoginOpenService {
      * @param password
      * @return
      */
-    LoginOpenServiceDTO.UserLoginMesageRespDTO UserLoginMesage(String username, String password);
+    ILoginOpenServiceDTO.UserLoginMesageRespDTO UserLoginMesage(String username, String password);
 
 
     /**
@@ -23,6 +23,6 @@ public interface ILoginOpenService {
      * @param user
      * @return
      */
-    LoginOpenServiceDTO.UserRegistered UserRegistered(User user);
+    ILoginOpenServiceDTO.UserRegistered UserRegistered(User user);
 
 }

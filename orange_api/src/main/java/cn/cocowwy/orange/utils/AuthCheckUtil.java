@@ -1,5 +1,6 @@
 package cn.cocowwy.orange.utils;
 
+import cn.cocowwy.orange.entity.Trade;
 import cn.cocowwy.orange.entity.User;
 import cn.hutool.core.lang.Assert;
 
@@ -34,5 +35,16 @@ public class AuthCheckUtil {
     public static void checkLogin(String username, String password) {
         Assert.notBlank(username, ErrorMsg.ERROR_BLANK_USERNAME);
         Assert.notBlank(password, ErrorMsg.ERROR_BLANK_PASSWORD);
+    }
+
+    /**
+     * 新增在线订单非空校验
+     */
+    public static void checkAddLogin(Trade trade) {
+        Assert.notBlank(trade.getTitle(), ErrorMsg.ERROR_BLANK_TRADE_TITLE);
+        Assert.notBlank(trade.getContent(), ErrorMsg.ERROR_BLANK_TRADE_CONTENT);
+        Assert.notNull(trade.getTips(), ErrorMsg.ERROR_BLANK_TRADE_TIPS);
+        Assert.notBlank(trade.getOrderType(), ErrorMsg.ERROR_BLANK_TRADE_ORDER_TYPE);
+        Assert.notNull(trade.getCreateUser(), ErrorMsg.ERROR_BLANK_TRADE_CREATE_USER);
     }
 }

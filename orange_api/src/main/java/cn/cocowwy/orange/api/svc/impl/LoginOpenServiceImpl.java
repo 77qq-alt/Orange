@@ -1,6 +1,6 @@
 package cn.cocowwy.orange.api.svc.impl;
 
-import cn.cocowwy.orange.api.dto.LoginOpenServiceDTO;
+import cn.cocowwy.orange.api.dto.ILoginOpenServiceDTO;
 import cn.cocowwy.orange.api.svc.ILoginOpenService;
 import cn.cocowwy.orange.entity.User;
 import cn.cocowwy.orange.service.UserService;
@@ -30,17 +30,17 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
      * @return
      */
     @Override
-    public LoginOpenServiceDTO.UserLoginMesageRespDTO UserLoginMesage(String username, String password) {
+    public ILoginOpenServiceDTO.UserLoginMesageRespDTO UserLoginMesage(String username, String password) {
         AuthCheckUtil.checkLogin(username, password);
         List<User> users = userService.queryUser(username, password);
         if (users.size() > 0) {
-            return LoginOpenServiceDTO.UserLoginMesageRespDTO
+            return ILoginOpenServiceDTO.UserLoginMesageRespDTO
                     .builder()
                     .user(users.get(0))
                     .result(true)
                     .build();
         }
-        return LoginOpenServiceDTO.UserLoginMesageRespDTO
+        return ILoginOpenServiceDTO.UserLoginMesageRespDTO
                 .builder()
                 .result(false)
                 .build();
@@ -52,7 +52,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
      * @return
      */
     @Override
-    public LoginOpenServiceDTO.UserRegistered UserRegistered(User user) {
+    public ILoginOpenServiceDTO.UserRegistered UserRegistered(User user) {
         // 校验必填字段
         AuthCheckUtil.checkRegistered(user);
 
@@ -60,7 +60,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
 
         // 校验是否被注册
         if (users.size() != 0) {
-            return LoginOpenServiceDTO.UserRegistered
+            return ILoginOpenServiceDTO.UserRegistered
                     .builder()
                     .result(false)
                     .message("该账号已被注册！")
@@ -70,7 +70,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
         // 校验其余信息  wx不能二次绑定
         List<User> userByWx = userService.querUserByWx(user.getWxId());
         if (userByWx.size() != 0) {
-            return LoginOpenServiceDTO.UserRegistered
+            return ILoginOpenServiceDTO.UserRegistered
                     .builder()
                     .result(false)
                     .message("该微信号已其他账号绑定！")
@@ -88,7 +88,7 @@ public class LoginOpenServiceImpl implements ILoginOpenService {
             log.info("用户注册信息失败，用户注册提供信息为：" + user);
         }
 
-        return LoginOpenServiceDTO.UserRegistered
+        return ILoginOpenServiceDTO.UserRegistered
                 .builder()
                 .result(save)
                 .message(save == true ? "用户注册成功" : "用户注册失败，请联系管管理员！")

@@ -3,17 +3,24 @@ package cn.cocowwy.orange;
 
 import cn.cocowwy.orange.api.svc.ILoginOpenService;
 import cn.cocowwy.orange.service.UserService;
+import cn.cocowwy.orange.utils.AutoSetDefaultUtil;
 import cn.cocowwy.orange.utils.RandomStrategy;
 import cn.cocowwy.orange.utils.RedisUtils;
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.data.redis.core.RedisTemplate;
+
+import java.time.LocalDateTime;
 
 
 @SpringBootTest
 @Slf4j
+@RefreshScope
 class OrangeApplicationTests {
     @Autowired
     UserService userService;
@@ -21,7 +28,16 @@ class OrangeApplicationTests {
     ILoginOpenService loginOpenService;
     @Autowired
     RedisTemplate redisTemplate;
+    @Value("${defaultTips:haha}")
+    public static String defaultTips;
 
+    /**
+     * 测试nacos读取配置
+     */
+    @Test
+    void testNacos() {
+        System.out.println(defaultTips);
+    }
 
     /**
      * 测试服务
@@ -39,7 +55,8 @@ class OrangeApplicationTests {
      */
     @Test
     void userIdRandomStrategy() {
-        RandomStrategy.getRandomUserId();
+//        RandomStrategy.getRandomUserId();
+        String s1 = String.valueOf(LocalDateTime.now().getYear()).substring(2, 4);
 
     }
 

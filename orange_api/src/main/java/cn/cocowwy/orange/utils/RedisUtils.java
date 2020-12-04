@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
  *@author Cocowwy
  *@create 2020-12-12-20:58
  */
+@Component
 public final class RedisUtils {
     private static RedisTemplate jsonTemplate = new RedisTemplate();
 
@@ -39,6 +40,4 @@ public final class RedisUtils {
     public static void set(Object key, Object obj) {
         jsonTemplate.opsForValue().set(key, obj);
     }
-
-
 }
