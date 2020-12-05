@@ -5,6 +5,7 @@ import cn.cocowwy.orange.api.svc.ITradeOpenService;
 import cn.cocowwy.orange.entity.Trade;
 import cn.cocowwy.orange.entity.User;
 import cn.cocowwy.orange.utils.AuthCheckUtil;
+import cn.cocowwy.orange.utils.AutoSetDefaultUtil;
 import cn.cocowwy.orange.utils.RedisUtils;
 import org.springframework.stereotype.Service;
 
@@ -16,15 +17,19 @@ import org.springframework.stereotype.Service;
 public class TradeOpenServiceImpl implements ITradeOpenService {
     @Override
     public ITradeOpenServiceDTO.GetOnlineTradeRespDTO getOnlineTrade(User user) {
-        //读取Redis上全部online信息
+        // 读取Redis上全部online信息
 
         return null;
     }
 
     @Override
     public ITradeOpenServiceDTO.AddOnLineTradeRespDTO addOnLineTrade(Trade trade) {
-        //校验新增订单非空
+        // 校验新增订单非空
         AuthCheckUtil.checkAddLogin(trade);
+        // 新增默认值
+        AutoSetDefaultUtil.setTradeDefault(trade);
+
+
 
         return null;
     }
