@@ -1,6 +1,5 @@
 package cn.cocowwy.orange.utils;
 
-import cn.cocowwy.orange.entity.Trade;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -30,4 +29,10 @@ public class NacosParam {
      */
     @Value("${config.welcome:0.5}")
     public String welcome;
+
+    /**
+     * 默认订单预存货时间
+     */
+    @Value("${config.tradeAliveHours:2}")
+    public Long tradeAliveHours;
 }

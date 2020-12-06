@@ -1,6 +1,7 @@
 package cn.cocowwy.orange.utils;
 
 import cn.cocowwy.orange.entity.Trade;
+import cn.hutool.core.date.LocalDateTimeUtil;
 import com.alibaba.nacos.api.config.annotation.NacosValue;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 /**
  * 该工具包用于自动设置默认值
@@ -36,7 +38,8 @@ public class AutoSetDefault {
         trade.setCreateTime(LocalDateTime.now());
         trade.setOrderType("0");
         trade.setChangeTime(LocalDateTime.now());
-
+        trade.setStatusTag("0");
+        trade.setAliveTime(LocalDateTimeUtil.offset(LocalDateTimeUtil.now(), nacosParam.getTradeAliveHours(), ChronoUnit.HOURS));
         // 以下优先用户设置信息
         trade.setTips(null == trade.getTips() ? nacosParam.getDefaultTips() : trade.getTips());
         return trade;
