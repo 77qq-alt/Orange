@@ -27,7 +27,7 @@ public final class RedisUtils {
      * @param key
      * @param obj
      */
-    public static void setObj(String key, Object obj) {
+    public static void set(String key, Object obj) {
         jsonTemplate.opsForValue().set(key, obj);
     }
 
@@ -37,7 +37,7 @@ public final class RedisUtils {
      * @param key
      * @param obj
      */
-    public static void set(Object key, Object obj) {
+    public static void set2Obj(Object key, Object obj) {
         jsonTemplate.opsForValue().set(key, obj);
     }
 }

@@ -6,6 +6,7 @@ import cn.cocowwy.orange.entity.Trade;
 import cn.cocowwy.orange.service.UserService;
 import cn.cocowwy.orange.utils.AutoSetDefault;
 import cn.cocowwy.orange.utils.NacosParam;
+import cn.cocowwy.orange.utils.RandomStrategy;
 import cn.cocowwy.orange.utils.RedisUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -44,6 +45,7 @@ class OrangeApplicationTests {
         System.out.println(autoSetDefault.setTradeDefault(Trade.builder().build()));
         System.out.println(nacosParam.getDefaultTips());
         System.out.println(autoSetDefault.setTradeDefault(Trade.builder().build()));
+        System.out.println(nacosParam.getWelcome());
     }
 
     /**
@@ -62,7 +64,10 @@ class OrangeApplicationTests {
     @Test
     void userIdRandomStrategy() {
 //        RandomStrategy.getRandomUserId();
-        String s1 = String.valueOf(LocalDateTime.now().getYear()).substring(2, 4);
+//        String s1 = String.valueOf(LocalDateTime.now().getYear()).substring(2, 4);
+       for(int i=0;i<10;i++){
+           System.out.println(RandomStrategy.getRandomUserId());
+       }
 
     }
 

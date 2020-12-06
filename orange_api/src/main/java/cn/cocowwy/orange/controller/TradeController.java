@@ -59,6 +59,4 @@ public class TradeController {
     public List<Map<String, Object>> getTradesByUserId(@RequestParam("userInfo") User user) {
         return null;
     }
-
-
 }
