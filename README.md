@@ -5,7 +5,7 @@
 同时提供校园墙的功能，通过”橙币”能够购买一定时间的“广告效果”，如：
 社团招新，创业找合伙人，情侣表白等服务。
 技术栈：
-Nacos作配置中心服务发现，sentinel熔断降级，
+Nacos作配置中心服务发现，使得配置一更新，项目的一些默认参数也得到实时的更新，sentinel熔断降级，
 集成java8新特性
 springboot+springMVC+mybaits-plus+easyCode生成原子服务层接口操作数据库
 使用hutool工具包简化开发，使用Assert进行异常处理
