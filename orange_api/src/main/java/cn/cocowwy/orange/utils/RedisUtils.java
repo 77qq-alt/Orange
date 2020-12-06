@@ -1,5 +1,7 @@
 package cn.cocowwy.orange.utils;
 
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
@@ -10,34 +12,39 @@ import org.springframework.stereotype.Component;
  *@create 2020-12-12-20:58
  */
 @Component
-public final class RedisUtils {
-    private static RedisTemplate jsonTemplate = new RedisTemplate();
+public class RedisUtils {
+
+    @Autowired
+    RedisTemplate jsonTemplate;
+
+    /**
+     * 分隔符
+     */
+    public final static String split = ":";
+
 
     /**
      * 对外提供该jsonTemplate
      * @return
      */
-    public static RedisTemplate getJsonTemplate() {
+    public RedisTemplate getJsonTemplate() {
         return jsonTemplate;
     }
 
     /**
-     * key为字符串类型
-     * value为obj
-     * @param key
-     * @param obj
+     * redisKey的生成工具
+     * @param name
+     * @return
      */
-    public static void set(String key, Object obj) {
-        jsonTemplate.opsForValue().set(key, obj);
-    }
-
-    /**
-     * key为Object类型
-     * value为obj
-     * @param key
-     * @param obj
-     */
-    public static void set2Obj(Object key, Object obj) {
-        jsonTemplate.opsForValue().set(key, obj);
+    public static String getRedisKey(String... name) {
+        StringBuilder sb = new StringBuilder();
+        for (String str : name) {
+            if (StringUtils.isNotBlank(str)) {
+                sb.append(str);
+                sb.append(split);
+            }
+        }
+        sb = sb.deleteCharAt(sb.lastIndexOf(split));
+        return sb.toString();
     }
 }

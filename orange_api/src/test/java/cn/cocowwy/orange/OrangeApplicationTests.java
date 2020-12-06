@@ -80,9 +80,6 @@ class OrangeApplicationTests {
 
     @Test
     void redis() {
-        //使用json序列化
-        RedisUtils.set("jsonRedisTemplate", loginOpenService.UserLoginMesage("123456", "123456"));
-        //默认
-        redisTemplate.opsForValue().set("redisTemplate", loginOpenService.UserLoginMesage("123456", "123456"));
+
     }
 }
