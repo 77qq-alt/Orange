@@ -8,8 +8,9 @@ import org.springframework.stereotype.Component;
 /**
  *
  * 自定义Redis客户端操作工具类
- *@author Cocowwy
- *@create 2020-12-12-20:58
+ * 该工具包直允许通过注入的方式获取
+ * @author Cocowwy
+ * @create 2020-12-12-20:58
  */
 @Component
 public class RedisUtils {
