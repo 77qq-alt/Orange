@@ -11,6 +11,10 @@ springboot+springMVC+mybaits-plus+easyCode生成原子服务层接口操作数�
 统一提供对外的api接口
 自定义RedisUtil等......
 
+本项目的环境搭建如下：
+Linux下JDK，MySQL，Nacos，Sentinel，Redis的搭建可参考本人的CSDN
+https://blog.csdn.net/pzzzz_wwy/category_10638289.html
+
 
 项目正在开发中，会持续进行更新...
 
