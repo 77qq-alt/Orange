@@ -2,11 +2,11 @@ package cn.cocowwy.orange;
 
 
 import cn.cocowwy.orange.api.svc.ILoginOpenService;
+import cn.cocowwy.orange.entity.Trade;
 import cn.cocowwy.orange.service.UserService;
-import cn.cocowwy.orange.utils.AutoSetDefaultUtil;
-import cn.cocowwy.orange.utils.RandomStrategy;
+import cn.cocowwy.orange.utils.AutoSetDefault;
+import cn.cocowwy.orange.utils.NacosParam;
 import cn.cocowwy.orange.utils.RedisUtils;
-import com.alibaba.nacos.api.config.annotation.NacosValue;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +28,12 @@ class OrangeApplicationTests {
     ILoginOpenService loginOpenService;
     @Autowired
     RedisTemplate redisTemplate;
-    @Value("${defaultTips:haha}")
-    public static String defaultTips;
+    @Value("${config.defaultTips:1}")
+    public Integer defaultTips;
+    @Autowired
+    AutoSetDefault autoSetDefault;
+    @Autowired
+    NacosParam nacosParam;
 
     /**
      * 测试nacos读取配置
@@ -37,6 +41,9 @@ class OrangeApplicationTests {
     @Test
     void testNacos() {
         System.out.println(defaultTips);
+        System.out.println(autoSetDefault.setTradeDefault(Trade.builder().build()));
+        System.out.println(nacosParam.getDefaultTips());
+        System.out.println(autoSetDefault.setTradeDefault(Trade.builder().build()));
     }
 
     /**
@@ -46,7 +53,6 @@ class OrangeApplicationTests {
     void testService() {
         // 测试esayCode模板生成是否有效
         System.out.println(userService.queryUser("111", "222").size());
-        ;
     }
 
     /**

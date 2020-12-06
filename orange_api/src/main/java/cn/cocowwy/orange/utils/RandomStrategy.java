@@ -1,5 +1,7 @@
 package cn.cocowwy.orange.utils;
 
+import cn.hutool.core.lang.UUID;
+
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
@@ -28,9 +30,15 @@ public class RandomStrategy {
      * @return
      */
     public static Long getRandomTradeId() {
-        String s1 = String.valueOf(LocalDateTime.now().getYear()).substring(2, 4);
-        String s2 = new StringBuilder(String.valueOf(Timestamp.valueOf(LocalDateTime.now()).getTime())).reverse().substring(0, 10);
-        return Long.valueOf(s1 + s2);
+        String year = String.valueOf(LocalDateTime.now().getYear()).substring(2, 4);
+        // 2.生成uuid的hashCode值
+        int hashCodeV = UUID.randomUUID().toString().hashCode();
+        // 3.有可能是负数
+        if (hashCodeV < 0) {
+            hashCodeV = -hashCodeV;
+        }
+        // 4.结果
+        return Long.valueOf(year + String.format("%014d", hashCodeV));
     }
 
     /**

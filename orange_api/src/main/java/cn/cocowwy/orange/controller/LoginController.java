@@ -1,12 +1,9 @@
 package cn.cocowwy.orange.controller;
 
 import cn.cocowwy.orange.api.dto.ILoginOpenServiceDTO;
-import cn.cocowwy.orange.api.dto.ILoginOpenServiceDTO;
 import cn.cocowwy.orange.api.svc.ILoginOpenService;
 import cn.cocowwy.orange.entity.User;
-import cn.cocowwy.orange.utils.AuthCheckUtil;
 import cn.hutool.core.bean.BeanUtil;
-import cn.hutool.core.lang.Assert;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -21,6 +18,7 @@ import java.util.Map;
  */
 @RestController
 @Slf4j
+@RefreshScope
 public class LoginController {
     @Autowired
     ILoginOpenService loginOpenService;
