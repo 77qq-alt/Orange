@@ -24,3 +24,4 @@ https://blog.csdn.net/pzzzz_wwy/category_10638289.html
 1.尽量使用spring Initializr搭建项目 而且注意springboot的版本是否支持alibaba！ 很容易出现版本不兼容的问题！
 2.nacos-config的时候 错将配置文件弄成了discovery 服务发现的配置文件
 3.nacos刷新配置不生效 --- 暂未解决  目前仅重启nacos生效 ，网上说原因是因为cglib代理了两次，也有说要用专门的配置类。暂时搁置！ ---目前已解决，莫名其妙的成功了后来。
+4.变量读取nacos上的配置不能使用static修饰，不然读取到的值为null
