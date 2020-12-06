@@ -3,6 +3,8 @@ package cn.cocowwy.orange.api.svc;
 import cn.cocowwy.orange.api.dto.ITradeOpenServiceDTO;
 import cn.cocowwy.orange.entity.Trade;
 import cn.cocowwy.orange.entity.User;
+import cn.cocowwy.orange.utils.RedisUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 订单类对外提供接口
@@ -12,10 +14,10 @@ import cn.cocowwy.orange.entity.User;
 public interface ITradeOpenService {
     /**
      * 提供查询在线的订单
-     * @param user
+     * @param userId
      * @return
      */
-    ITradeOpenServiceDTO.GetOnlineTradeRespDTO getOnlineTrade(User user);
+    ITradeOpenServiceDTO.GetOnlineTradeRespDTO getOnlineTrade(Long userId);
 
     /**
      * 添加在线订单接口
@@ -23,4 +25,5 @@ public interface ITradeOpenService {
      * @return
      */
     ITradeOpenServiceDTO.AddOnLineTradeRespDTO addOnLineTrade(Trade trade);
+
 }

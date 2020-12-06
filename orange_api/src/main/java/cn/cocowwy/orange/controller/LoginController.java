@@ -2,6 +2,7 @@ package cn.cocowwy.orange.controller;
 
 import cn.cocowwy.orange.api.dto.ILoginOpenServiceDTO;
 import cn.cocowwy.orange.api.svc.ILoginOpenService;
+import cn.cocowwy.orange.api.svc.ITradeOpenService;
 import cn.cocowwy.orange.entity.User;
 import cn.hutool.core.bean.BeanUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +23,8 @@ import java.util.Map;
 public class LoginController {
     @Autowired
     ILoginOpenService loginOpenService;
+
+
 
 
     /**
