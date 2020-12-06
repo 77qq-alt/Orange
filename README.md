@@ -8,6 +8,8 @@
 Nacos作配置中心服务发现，sentinel熔断降级，
 集成java8新特性
 springboot+springMVC+mybaits-plus+easyCode生成原子服务层接口操作数据库
+使用hutool工具包简化开发，使用Assert进行异常处理
+使用redis，维护订单列表等信息，并且对value使用json方式存储，
 统一提供对外的api接口
 自定义RedisUtil等......
 
